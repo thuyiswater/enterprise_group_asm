@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viet Holiday</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header class="header"> 
+        <div class="logo">Logo</div>
+
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Tour</a>
+            <a href="#"> Vehicles</a>
+        </nav>
+
+        <div class="user-account-container">
+            <select name="user-account" id="user-account">
+                <option value="email" disabled selected>s3904632@rmit.edu.vn</option>
+                <option value="editProfile">Edit Profile</option>
+                <option value="logOut">Log Out</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="welcome-container">
+            <span class="welcome">Welcome</span><br>
+            <span>Find your best vehicle</span>
+        </div>
+
+        <div class="pickup-container">
+            <span>Pickup Location:</span><br>
+            <select name="pick-up-location" id="pick-up-location">
+                <option value="" disabled selected>-Please select a pickup location-</option>
+                <option value="hoChiMinh">Ho Chi Minh City</option>
+                <option value="vungTau">Vung Tau</option>
+                <option value="dongNai">Dong Nai</option>
+                <option value="longAn">Long An</option>
+                <option value="canTho">Can Tho</option>
+            </select>
+        </div>
+
+        <div class="destination-container">
+            <span>Destination:</span><br>
+            <select name="destination" id="destination">
+                <option value="" disabled selected>-Please select a destination-</option>
+                <option value="hoChiMinh">Ho Chi Minh City</option>
+                <option value="vungTau">Vung Tau</option>
+                <option value="dongNai">Dong Nai</option>
+                <option value="longAn">Long An</option>
+                <option value="canTho">Can Tho</option>
+            </select>
+        </div>
+
+        <div class="time-container">
+            <div class="date">
+                <span>Pickup Date</span><br>
+                <input type="date" id="pick-up-date" class="pick-up-date">
+            </div>
+            <div class="time">
+                <span>Pickup Time</span> <br>
+                <input type="time"id="pick-up-time" class="pick-up-time">
+            </div> 
+        </div>
+
+        <div class="more-info-container">
+            <div class="seats">
+                <span>Vehicle</span><br>
+                <select name="seats-type" id="seats-type">
+                    <option value="" disabled selected>-Seats Type-</option>
+                    <option value="4">4</option>
+                    <option value="7">7</option>
+                    <option value="16">16</option>
+                    <option value="29">29</option>
+                    <option value="35">35</option>
+                    <option value="45">45</option>
+                </select>
+            </div>
+            <div class="children">
+                <span>Children</span><br>
+                <input type="number" id="children-input" class="children-input">
+            </div><div class="adult">
+                <span>Adults</span><br>
+                <input type="number" id="adult-input" class="adult-input">
+            </div>
+        </div>
+        <span class="note">*Prices on the website are the reference only. For more details,</span><br>
+        <span class="note">please contact us directly</span><br>
+
+        <button type="submit" class="search-button">Search</button>
+    </div>
+
+    <div class="slogan">
+        <span class="slogan-text">MAKE TRIPS BETTER</span> <br>
+        <span class="slogan-text-2">Offering the best service</span>
+    </div>
+
+    <script>
+        const userAccountSelect = document.getElementById("user-account");
+
+        userAccountSelect.addEventListener("change", function() {
+        const selectedOption = userAccountSelect.value;
+        if (selectedOption === "editProfile") {
+            editProfile();
+        } else if (selectedOption === "logOut") {
+            logOut();
+        }
+        });
+
+        function editProfile() {
+            window.location.href= "editProfile.html"
+        }
+
+        function logOut() {
+            window.location.href = "index.html";
+        }
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("container").style.top = "0";
+            } else {
+                document.getElementById("container").style.top = "-50px";
+            }
+        }
+    </script>
+</body>
+</html>
