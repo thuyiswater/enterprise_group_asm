@@ -8,27 +8,28 @@
         <link rel="stylesheet" href="index.css">
     </head>
 
+    <header class="header"> 
+        <div class="logo">
+            <img src="./image/logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="#">Tour</a>
+            <a href="#"> Vehicles</a>
+        </nav>
+
+        <div class="user-account-container">
+            <select name="user-account" id="user-account">
+                <option value="email" disabled selected>s3904632@rmit.edu.vn</option>
+                <option value="editProfile">Edit Profile</option>
+                <option value="logOut">Log Out</option>
+            </select>
+        </div>
+    </header>
+    
     <body>
-        <header class="header"> 
-            <div class="logo">Logo</div>
-
-            <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Tour</a>
-                <a href="#"> Vehicles</a>
-            </nav>
-
-            <div class="user-account-container">
-                <select name="user-account" id="user-account">
-                    <option value="email" disabled selected>s3904632@rmit.edu.vn</option>
-                    <option value="editProfile">Edit Profile</option>
-                    <option value="logOut">Log Out</option>
-                </select>
-            </div>
-        </header>
-
-
         <div class="container-general">
             <div class="container">
                 <div class="welcome-container">
@@ -111,69 +112,28 @@
             <div class="card-container">
                 <div class="card">
                     <box-icon name='support' size="100px"></box-icon>
+                    <img class="cus-sup" src="./image/4983559.png" alt="Customer Support">
                     <h2>Customer Support</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
 
                 <div class="card">
                     <box-icon type='solid' name='planet' size="100px"></box-icon>
+                    <img class="bus-travel" src="./image/3147375-200.png" alt="Business Travel">
                     <h2>Business Travel</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 </div>
 
                 <div class="card">
                     <box-icon name='heart' type='solid'  size="100px"></box-icon>
+                    <img class="care" src="./image/335636-200.png" alt="Duty of Care">
                     <h2>Duty of Care</h2>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
             </div>
         </div>
         
-        <footer class="footer">
-            <div class="footer-general">
-                <div class="footer-top">
-                    <div class="subscribe-container">    
-                        <h2>Subscribe our newsletter</h2>
-                        <span>Want to know about our offer first?</span> <br>
-                        <input type="text" class="email" id="email" placeholder="example@gmail.com">
-                        <button>Subscribe</button>
-                    </div>
         
-                    <div class="logo-container">
-                        <div>Logo</div>
-                        <span>Legal</span>
-                        <span>Privacy Policy</span>
-                        <span>Term of Use</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="phone-contact">
-                    <box-icon name='phone' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
-                    <span>+84 (0) 933 9696 17</span> <br>
-                    <span>Mr. Nam</span>
-                </div>
-                <div class="location">
-                    <box-icon name='location-plus' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
-                    <span>aaaaaaaaaaaaaaaaaaa</span>
-                </div>
-                <div class="mail">
-                    <box-icon name='envelope' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
-                    <span>example@gmail.com</span>
-                </div>
-                <div class="working-hours">
-                    <box-icon name='pie-chart-alt' size="36px" color="#FFCD6B"></box-icon> <br>
-                    <span>Mon-Fri: 8:00-21:00</span> <br>
-                    <span>Sat-Sun: 9:30-19:30</span>
-                </div>
-            </div>
-            
-            <div class="group-id">
-                <span>Group 18</span>
-            </div>
-        </footer>
-
         <script>
             const userAccountSelect = document.getElementById("user-account");
 
@@ -205,4 +165,47 @@
             }
         </script>
     </body>
+    <footer class="footer">
+    
+        <div class="footer-top">
+            <div class="subscribe-container">    
+                <h2>Subscribe our newsletter</h2>
+                <span>Want to know about our offer first?</span> <br>
+                <input type="text" class="email" id="email" placeholder="example@gmail.com">
+                <button>Subscribe</button>
+            </div>
+
+            <div class="logo-container">
+                <img src="./image/logo.png" alt="Logo">
+            </div>
+        </div>
+        
+        
+        <div class="footer-bottom">
+            <div class="footer-contact-info">
+                <box-icon name='phone' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
+                <span>+84 (0) 933 9696 17</span> <br>
+                <span>Mr. Nam</span>
+            </div>
+            <div class="footer-contact-info">
+                <box-icon name='location-plus' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
+                <span>aaaaaaaaaaaaaaaaaaa</span>
+            </div>
+            <div class="footer-contact-info">
+                <box-icon name='envelope' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
+                <span>example@gmail.com</span>
+            </div>
+            <div class="working-hours footer-contact-info">
+                <box-icon name='pie-chart-alt' size="36px" color="#FFCD6B"></box-icon> <br>
+                <span>Mon-Fri: 8:00-21:00</span> <br>
+                <span>Sat-Sun: 9:30-19:30</span>
+            </div>
+        </div>
+        
+        <div class="group-id">
+            <span>Group 18</span>
+        </div>
+
+    </footer>
+
 </html>
