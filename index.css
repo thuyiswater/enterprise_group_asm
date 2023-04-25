@@ -34,7 +34,7 @@ body {
     position: relative;
     color: black;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     margin-right: 30px;
 }
@@ -108,7 +108,7 @@ body {
     background: url('image/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     margin-top: -10px;
     position: relative;
 }
