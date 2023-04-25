@@ -54,7 +54,6 @@ body {
     background: goldenrod;
     border-radius: 5px;
     transform: translateY(10px);
-    opacity: 0;
     transition: 0.5s;
 }
 
@@ -292,7 +291,6 @@ body {
     line-height: 60px;
     display: flex;
     align-items: center;
-
     color: #000000;
 }
 .card-container{
