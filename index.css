@@ -38,7 +38,7 @@ body {
     position: relative;
     color: black;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 550;
     text-decoration: none;
     margin-right: 30px;
 }
@@ -111,11 +111,17 @@ body {
     background: url('image/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    margin-top: 20px;
+    height: 95vh;
+    margin-top: -10px;
     position: relative;
 
 }
+
+@media only screen and (max-width: 767px) {
+    .container-general {
+       background-image: url('image/background.jpg');
+    }
+  }
 
 .container {
     width: 25%;
