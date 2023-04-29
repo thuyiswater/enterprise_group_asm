@@ -121,8 +121,7 @@
 
 .box {
     margin-top: 50px;
-    width: 6    00px;
-    height: 300px;
+    height: 150px;
     padding-left: 80px;
     text-align: left;
     font-size: 14px;
@@ -130,17 +129,52 @@
 
 .car2 {
     width: 453px;
-    height: 347px;
-    margin-left: 50px;
+    height: 340px;
+    margin-left: 100px;
     margin-top: 20px;
     float: left;
 }
 
 .box2 {
-   display: inline;
-   margin-top: 20px;
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr;
 }
 
-.safety-guarantee {
+.safety-container {
     text-align: right;
+    /* margin-top: 10px; */
+    margin-right: 50px;
+}
+
+.box3 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.footer-img {
+    position: relative;
+    object-fit: cover;
+    width: 1515px;
+    height: 540px;
+    display: block;
+    margin-top: 50px;
+    filter: opacity(80%);
+    filter: contrast(-10%);
+    filter: saturate(200%);
+}
+
+.contact {
+    background-color: #FB7800;
+    width: 137px;
+    height: 38px;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(200px , -300px);
+    z-index: 3;
+}
+
+.group-id {
+    text-align: center;
+    font-style: italic;
 }
