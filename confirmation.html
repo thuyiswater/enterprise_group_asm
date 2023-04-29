@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Viet Holiday</title>
+        <link rel="stylesheet" href="confirmation.css">
+    </head>
+
+    <header class="header"> 
+        <div class="logo">
+            <img class="header-logo" src="./image/logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="#">Tour</a>
+            <a href="#"> Vehicles</a>
+        </nav>
+
+        <div class="user-account-container">
+            <select name="user-account" id="user-account">
+                <option value="email" disabled selected>s3904632@rmit.edu.vn</option>
+                <option value="editProfile">Edit Profile</option>
+                <option value="logOut">Log Out</option>
+            </select>
+        </div>
+    </header>
+    
+    <body>
+        <div class="container-general">
+            <div class="left-panel">
+                <div class="title">
+                    <h2>Viet Holiday</h2>
+                    <p>Make trip better. Offer you the best service</p>
+                </div>
+    
+                <form class="my-form">
+                    <h4>Booking Details</h4>
+                    <input type="text" class="id" id="id" placeholder="Booking ID"> 
+                    <div class="name-field">
+                        <input type="text" class="first-name" id="first-name" placeholder="First Name">
+                        <input type="text" class="last-name" id="last-name" placeholder="Last Name">
+                    </div>
+                    <input type="text" class="address" id="address" placeholder="Address">
+                    <div>
+                        <input type="text" class="post-code" id="post-code" placeholder="Postal Code">
+                        <input type="text" class="city" id="city" placeholder="Province/City" >
+                    </div>
+                    <input type="text" class="phone" id="phone" placeholder="Phone">
+                    <input type="text" class="pick-up" id="pick-up" placeholder="Pick Up"> 
+                    <input type="text" class="destination" id="destination" placeholder="Destination">
+                    <div>
+                        <input type="date" class="date" id="date">
+                        <input type="time" class="time" id="city">
+                    </div>
+                    <select name="payment" id="payment" class="payment">
+                        <option value="" selected disabled>Please select a payment method</option>
+                        <option value="Banking">Banking</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+
+                    <h4>Vehicle Details</h4>
+                    <input type="text" class="brand" id="brand" disabled> 
+                    <input type="text" class="car-name" id="car-name" disabled> 
+                    <input type="text" class="colour" id="colour" disabled> 
+                    <input type="text" class="plate" id="plate" disabled> 
+
+                    <h4>Driver Details</h4>
+                    <div class="name-field">
+                        <input type="text" class="driver-first-name" id="driver-first-name" placeholder="First Name">
+                        <input type="text" class="driver-last-name" id="driver-last-name" placeholder="Last Name">
+                    </div>
+                    <input type="text" class="driver-phone" id="driver-phone" placeholder="Phone">
+                    <br>
+
+                    <button type="submit" class="confirm-button">CONFIRM</button>
+                </form>
+            </div>  
+     
+     
+            <div class="right-panel">
+                <span class="order-summary">Summary</span> <br>
+     
+                <span>Subtotal:</span>
+                <span class="cost"> 1</span> <br>
+                <span>Tax:</span>
+                <span class="cost">1</span> <br>
+                <hr>
+                <span>Total:</span>
+                <span class="cost">2</span> <br>
+            </div>
+        </div>
+
+        <footer class="footer">
+    
+            <div class="footer-top">
+                <div class="subscribe-container">    
+                    <h2>Subscribe our newsletter</h2>
+                    <span>Want to know about our offer first?</span> <br>
+                    <input type="text" class="email" id="email" placeholder="example@gmail.com">
+                    <button>Subscribe</button>
+                </div>
+    
+                <div class="logo-container">
+                    <img src="./image/logo.png" alt="Logo">
+                </div>
+            </div>
+            
+            
+            <div class="footer-bottom">
+                <div class="footer-contact-info">
+                    <box-icon name='phone' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
+                    <span>+84 (0) 933 9696 17</span> <br>
+                    <span>Mr. Nam</span>
+                </div>
+                <div class="footer-contact-info">
+                    <box-icon name='location-plus' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
+                    <span>aaaaaaaaaaaaaaaaaaa</span>
+                </div>
+                <div class="footer-contact-info">
+                    <box-icon name='envelope' type='solid' size="36px" color="#FFCD6B"></box-icon> <br>
+                    <span>example@gmail.com</span>
+                </div>
+                <div class="working-hours footer-contact-info">
+                    <box-icon name='pie-chart-alt' size="36px" color="#FFCD6B"></box-icon> <br>
+                    <span>Mon-Fri: 8:00-21:00</span> <br>
+                    <span>Sat-Sun: 9:30-19:30</span>
+                </div>
+            </div>
+            
+            <div class="group-id">
+                <span>Group 18</span>
+            </div>
+        </footer>
+
+        <script>
+            const vehicles = [
+            {
+                id: '001',
+                brand: 'Hyundai',
+                name: 'Solati',
+                colour: 'Silver',
+                plate: '59K09898'
+            },
+            {
+                id: '002',
+                brand: 'Ford',
+                name: 'Transit',
+                colour: 'Silver',
+                plate: '59K09898'
+            },
+            {
+                id: '003',
+                brand: 'Thaco',
+                name: 'Garden',
+                colour: 'Orange - White',
+                plate: '59K09898'
+            },
+            {
+                id: '004',
+                brand: 'Samco',
+                name: 'Isuzu',
+                colour: 'White',
+                plate: '59K09898'
+            },
+            {
+                id: '005',
+                brand: 'Thaco',
+                name: 'Town',
+                colour: 'Orange - White',
+                plate: '59K09898'
+            },
+            {
+                id: '006',
+                brand: 'Hyundai',
+                name: 'Universe',
+                colour: 'Black',
+                plate: '59K09898'
+            },
+            {
+                id: '007',
+                brand: 'Toyota',
+                name: 'Innova',
+                colour: 'Silver',
+                plate: '59K09898'
+            },
+            {
+                id: '008',
+                brand: 'Chevrolet',
+                name: 'Captiva',
+                colour: 'Silver',
+                plate: '59K09898'
+            },
+            {
+                id: '009',
+                brand: 'Chevrolet',
+                name: 'Cruze',
+                colour: 'White',
+                plate: '59K09898'
+            },
+            {
+                id: '010',
+                brand: 'Hyundai',
+                name: 'Universe',
+                colour: 'Red',
+                plate: '59K09898'
+            }
+            ];
+            const urlParams = new URLSearchParams(window.location.search);
+            const vehicleId = urlParams.get('vehicle.id');
+
+            const vehicle = vehicles.find(v => v.id === vehicleId);
+            document.getElementById('brand').value = vehicle.brand;
+            document.getElementById('car-name').value = vehicle.name;
+            document.getElementById('colour').value = vehicle.colour;
+            document.getElementById('plate').value = vehicle.plate;
+        </script>
+    </body>
+</html>
