@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Viet Holiday</title>
+        <link rel="stylesheet" href="driver.css">
+    </head>
+
+    <header class="header"> 
+        <div class="logo">
+            <img class="header-logo" src="./image/logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+        </nav>
+
+        <div class="driver-account-container">
+            <select name="driver-account" id="driver-account">
+                <option value="driver-account" selected disabled>Driver</option>
+                <option value="logOut">Log Out</option>
+            </select>
+        </div>
+    </header>
+    
+    <body>
+        <div class="container-general">
+            <div class="left-panel">
+                <h4>Schedule</h4>
+                <table class="schedule-table"></table>
+            </div>
+            
+            <div class="right-panel">
+            </div>
+        </div>       
+        
+        <script>
+           const schedules = [
+            {
+                id: '001',
+                date: 'April 29',
+                time: '4:00 Pm',
+                pickUp: 'Here',
+                destination: 'There',
+                Distance: 0,
+                Arrival: '4:01 Pm',
+                Payment: 'Cash',
+                Status: 'Processing'
+            },
+            {
+                id: '002',
+                date: 'April 29',
+                time: '5:00 Pm',
+                pickUp: 'Here',
+                destination: 'There',
+                Distance: 0,
+                Arrival: '5:01 Pm',
+                Payment: 'Cash',
+                Status: 'Processing'
+            },
+            {
+                id: '003',
+                date: 'April 29',
+                time: '6:00 Pm',
+                pickUp: 'Here',
+                destination: 'There',
+                Distance: 0,
+                Arrival: '6:01 Pm',
+                Payment: 'Cash',
+                Status: 'Processing'
+            },
+            {
+                id: '004',
+                date: 'April 29',
+                time: '7:00 Pm',
+                pickUp: 'Here',
+                destination: 'There',
+                Distance: 0,
+                Arrival: '7:01 Pm',
+                Payment: 'Cash',
+                Status: 'Processing'
+            },
+            {
+                id: '005',
+                date: 'April 29',
+                time: '8:00 Pm',
+                pickUp: 'Here',
+                destination: 'There',
+                Distance: 0,
+                Arrival: '8:01 Pm',
+                Payment: 'Cash',
+                Status: 'Processing'
+            },
+           ];
+           const table = document.querySelector('table');
+
+            const tableHeader = document.createElement('tr');
+            tableHeader.innerHTML = `
+                <th>Date</th>
+                <th>Pick Up Time</th>
+                <th>Pick Up Location</th>
+                <th>Destination</th>
+                <th>Distance</th>
+                <th>Estimated Time of Arrival</th>
+                <th>Payment Method</th>
+                <th></th>
+            `;
+            table.appendChild(tableHeader);
+
+            schedules.forEach(schedule => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${schedule.date}</td>
+                <td>${schedule.time}</td>
+                <td>${schedule.pickUp}</td>
+                <td>${schedule.destination}</td>
+                <td>${schedule.Distance} km</td>
+                <td>${schedule.Arrival}</td>
+                <td>${schedule.Payment}</td>
+                <td><button class="finish-button">Finish</button></td>
+            `;
+            table.appendChild(row);
+            });
+
+
+            const driver = {
+            name: 'Driver',
+            phone: '+84',
+            age: 18,
+            gender: 'Male'
+            }
+
+            const rightPanel = document.querySelector('.right-panel');
+            rightPanel.innerHTML = `<h4>Driver Profile</h4> <br>
+                                    <span class="attribute-name">Name: </span> ${driver.name}<br>
+                                    <span class="attribute-name">Phone: </span> ${driver.phone}<br>
+                                    <span class="attribute-name">Age: </span> ${driver.age}<br>
+                                    <span class="attribute-name">Gender: </span> ${driver.gender}<br>`;
+
+            const driverAccountSelect = document.getElementById("driver-account");
+
+            driverAccountSelect.addEventListener("change", function() {
+                const selectedOption = driverAccountSelect.value;
+                if (selectedOption === "logOut") {
+                    window.location.href = "signin.html";
+                }
+            });
+
+        </script>
+    </body>
+
+    <footer class="footer">
+        <span class="group-id">Group 18</span>  
+    </footer>
+</html>
