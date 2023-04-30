@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Viet Holiday</title>
-        <link rel="stylesheet" href="driver.css">
+        <link rel="stylesheet" href="admin.css">
     </head>
 
     <header class="header"> 
@@ -14,12 +14,15 @@
         </div>
 
         <nav class="navbar">
-            <a href="home.html">Home</a>
+            <a href="admin.html">Home</a>
+            <a href="adminDriver.html">Driver</a>
+            <a href="adminVehicle.html">Vehicle</a>
+            <a href="">User</a>
         </nav>
 
-        <div class="driver-account-container">
-            <select name="driver-account" id="driver-account">
-                <option value="driver-account" selected disabled>Driver</option>
+        <div class="admin-account-container">
+            <select name="admin-account" id="admin-account">
+                <option value="admin-account" selected disabled>Admin</option>
                 <option value="logOut">Log Out</option>
             </select>
         </div>
@@ -27,21 +30,17 @@
     
     <body>
         <div class="container-general">
-            <div class="left-panel">
-                <h4>Schedule</h4>
+            <div class="schedule">
+                <h4>Schedule</h4> <br>
                 <table class="schedule-table"></table>
-            </div>
-            
-            <div class="right-panel">
             </div>
         </div>       
         
         <script>
-           fetch('http://localhost:8080/bookings')
+            fetch('http://localhost:8080/bookings')
             .then(response => response.json())
             .then(schedules => {
                 writeSchedule(schedules);
-                writeDriverInfor(schedules[0].driver);
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -56,8 +55,13 @@
                     <th>Pick Up Location</th>
                     <th>Destination</th>
                     <th>Estimated Time of Arrival</th>
+                    <th>User Name</th>
+                    <th>Car Plate</th>
+                    <th>Driver Name</th>
                     <th>Payment Method</th>
-                    <th></th>
+                    <th>Total</th>
+                    <th>Payment Status</th>
+                    <th>Process</th>
                 `;
                 table.appendChild(tableHeader);
 
@@ -69,33 +73,17 @@
                     <td>${schedule.bookingPickUpLocation}</td>
                     <td>${schedule.bookingDropOffLocation}</td>
                     <td>${schedule.bookingDropOffTime}</td>
+                    <td>${schedule.user.userName}</td>
+                    <td>${schedule.vehicle.plate}</td>
+                    <td>${schedule.driver.driverName}</td>
                     <td>${schedule.payment.paymentType}</td>
-                    <td>
-                        <button class="finish-button">Finish</button>
-                        <button class="view-more-button">View More</button>
-                    </td>
+                    <td>${schedule.payment.paymentAmount}</td>
+                    <td>${schedule.payment.paymentStatus}</td>
+                    <td>Processing</td>
                 `;
                 table.appendChild(row);
                 });
             }
-
-            function writeDriverInfor(driver){
-                const rightPanel = document.querySelector('.right-panel');
-                rightPanel.innerHTML = `<h4>Driver Profile</h4> <br>
-                                        <span class="attribute-name">Name: </span> ${driver.driverName}<br>
-                                        <span class="attribute-name">Phone: </span> ${driver.driverPhoneNumber}<br>
-                                        <span class="attribute-name">License: </span> ${driver.driverLicenseNumber}<br>
-                                        <span class="attribute-name">Experience: </span> ${driver.driverYearOfExperience}<br>`;
-            }
-
-            const driverAccountSelect = document.getElementById("driver-account");
-            driverAccountSelect.addEventListener("change", function() {
-                const selectedOption = driverAccountSelect.value;
-                if (selectedOption === "logOut") {
-                    window.location.href = "signin.html";
-                }
-            });
-
         </script>
     </body>
 
