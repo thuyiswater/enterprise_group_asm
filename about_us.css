@@ -22,6 +22,11 @@
     z-index: 100;
 }
 
+.header .header-logo {
+    height: auto;
+    width: 150px;
+}
+
 .navbar a {
     position: relative;
     color: black;
@@ -112,7 +117,7 @@
 
 .background .car1 {
     object-fit: cover;
-    width: 1515px;
+    width: 1500px;
     height: 540px;
     display: block;
     margin: 30px auto;
@@ -121,6 +126,7 @@
 .box {
     margin-top: 50px;
     height: 150px;
+    width: 1200px;
     padding-left: 80px;
     text-align: left;
     font-size: 14px;
@@ -149,12 +155,13 @@
 .box3 {
     text-align: center;
     margin-top: 100px;
+    padding: 0px 50px;
 }
 
 .footer-img {
     position: relative;
     object-fit: cover;
-    width: 1515px;
+    width: 1495px;
     height: 540px;
     display: block;
     margin-top: 50px;
