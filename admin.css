@@ -61,14 +61,14 @@ body {
     opacity: 1;
 }
 
-#driver-account {
+#admin-account {
     border: none;
     outline: none;
     font-size: 16px;
     font-weight: bold;
 }
 
-#driver-account option {
+#admin-account option {
     font-size: 16px;
     font-weight: bold;
     background-color: #FFCD6B;
@@ -85,10 +85,10 @@ body {
     flex-direction: row;
 }
 
-.left-panel {
+.schedule {
     border: none;
     outline: none;
-    width: 70%;
+    width: 95%;
     height: fit-content;
     padding: 30px;
     margin: 10px 0px;
@@ -116,37 +116,6 @@ tr:nth-child(odd):not(:first-child) {
 
 td {
     text-align: right;
-}
-
-.finish-button {
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-.view-more-button {
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    background-color: #FFCD6B;
-    margin: 5px;
-}
-
-.right-panel {
-    margin: 10px 2.5%;
-    border: none;
-    outline: none;
-    width: 25%;
-    height: fit-content;
-    padding: 20px;
-    background-color: white;
-}
-
-.attribute-name {
-    font-weight: bold;
 }
 
 .footer {
