@@ -17,7 +17,7 @@
             <a href="home.html">Home</a>
             <a href="about_us.html">About Us</a>
             <a href="#">Services</a>
-            <a href="#"> Vehicles</a>
+            <a href="vehicles.html"> Vehicles</a>
         </nav>
 
         <div class="user-account-container">
@@ -78,6 +78,19 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+            }
+        </script>
     </body>
     <footer>
         <div class="footer-info">
