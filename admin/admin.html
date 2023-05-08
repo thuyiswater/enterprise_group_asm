@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Viet Holiday</title>
         <link rel="stylesheet" href="admin.css">
+        <script src="script.js"></script>
+
     </head>
 
     <header class="header"> 
@@ -23,7 +25,9 @@
         <div class="admin-account-container">
             <select name="admin-account" id="admin-account">
                 <option value="admin-account" selected disabled>Admin</option>
-                <option value="logOut">Log Out</option>
+                <option id="logout" class="logout"  value="logOut">
+                    <button type="button" onclick="signOut()">Log Out</button>
+                </option>
             </select>
         </div>
     </header>

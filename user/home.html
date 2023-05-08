@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Viet Holiday</title>
         <link rel="stylesheet" href="index.css">
+        <script src="script.js"></script>
     </head>
 
     <header class="header"> 
@@ -17,14 +18,16 @@
             <a href="home.html">Home</a>
             <a href="about_us.html">About Us</a>
             <a href="#">Services</a>
-            <a href="#"> Vehicles</a>
+            <a href="vehicles.html"> Vehicles</a>
         </nav>
 
-        <div class="user-account-container">
-            <select name="user-account" id="user-account">
+        <div class="user-account-container" >
+            <select name="user-account" id="user-account" onchange="signOut()">
                 <option value="email" disabled selected>s3904632@rmit.edu.vn</option>
                 <option value="editProfile">Edit Profile</option>
-                <option value="logOut">Log Out</option>
+                <option value="logout">
+                    Logout
+                </option> 
             </select>
         </div>
     </header>
@@ -132,8 +135,7 @@
                 </div>
             </div>
         </div>
-        
-        
+    
         <script>
             const userAccountSelect = document.getElementById("user-account");
 
@@ -151,7 +153,7 @@
             }
 
             function logOut() {
-                window.location.href = "index.html";
+                window.location.href = "home.html";
             }
 
             window.onscroll = function() {scrollFunction()};
@@ -165,6 +167,7 @@
             }
         </script>
     </body>
+
     <footer class="footer">
         <div class="footer-top">
             <div class="subscribe-container">    
@@ -203,7 +206,5 @@
         <div class="group-id">
             <span>Group 18</span>
         </div>
-
     </footer>
-
 </html>

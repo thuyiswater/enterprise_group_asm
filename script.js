@@ -17,12 +17,33 @@ function signUp() {
 }
 
 function signIn() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    //print out the email and password
     console.log(email);
     console.log(password);
 
-    window.location.href = "signup.html";
+    const authenticate = authentication(email, password);
+    if(authenticate){
+        window.location.href = "home.html";
+    } else {
+        alert("wrong");
+        
+    }
+}
+
+//check email & password
+function authentication(email,password) {
+    if(email === "test" && password === "test") {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function signOut() {
+    window.location.replace("signin.html")
 }
 
 function search() {
@@ -38,6 +59,5 @@ function search() {
         alert('Please fill out all fields before searching!');
         return;
     }   
-    
-    
 }
+
