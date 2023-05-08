@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vehicles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Viet Holiday</title>
 </head>
 
@@ -31,18 +32,30 @@
 
 <body>
     <div class="container">
-        <div class="filter-container">
-            <h5>Filter By</h5>
-            <p>Price</p>
+        <div class="filter"> <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="false" aria-controls="mobile-filter">Filters<span class="fa fa-filter pl-1"></span></button>
+        </div>
+        <div id="mobile-filter">
+            <div>
+                <h6 class="p-1 border-bottom">Home Furniture</h6>
+                <ul>
+                <li><a href="#">Living</a></li>
+                <li><a href="#">Dining</a></li>
+                <li><a href="#">Office</a></li>
+                <li><a href="#">Bedroom</a></li>
+                <li><a href="#">Kitchen</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="grid-container">
             <div class="card">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <img class="car-img" src="https://cdn.vatgia.com/pictures/fullsize/2009/12/03/kve1259804575.jpg" alt="vehicle">
-                <p>Brand: lorem ipsum </p>
-                    Name: lorem ipsum
-                    Plate: lorem ipsum</p>
+                <a href="#">
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                    <img class="car-img" src="https://cdn.vatgia.com/pictures/fullsize/2009/12/03/kve1259804575.jpg" alt="vehicle">
+                    <p>Brand: lorem ipsum</p>
+                        Name: lorem ipsum
+                        Plate: lorem ipsum</p>
+                </a>
             </div>
     
             <div class="card">
@@ -60,7 +73,7 @@
                     Name: lorem ipsum
                     Plate: lorem ipsum</p>
             </div>
-    
+
             <div class="card">
                 <h3>Lorem ipsum dolor sit amet</h3>
                 <img class="car-img" src="https://cdn.vatgia.com/pictures/fullsize/2009/12/03/kve1259804575.jpg" alt="vehicle">
@@ -68,7 +81,7 @@
                     Name: lorem ipsum
                     Plate: lorem ipsum</p>
             </div>
-        </div>
+        </div> 
     </div>
 
     <script>
