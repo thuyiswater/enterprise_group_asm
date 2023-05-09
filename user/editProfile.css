@@ -48,7 +48,7 @@
 }
 
 body{
-    background: url('./image/background.jpg');
+    background: url('../image/background.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     overflow:hidden;
@@ -215,4 +215,18 @@ button {
     border: none;
     outline: none;
     background: transparent; 
+}
+
+#user-account {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#user-account option {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFCD6B;
+    color: black;
 }

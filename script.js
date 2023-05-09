@@ -43,6 +43,7 @@ function authentication(email,password) {
 }
 
 function signOut() {
+    console.log("logout")
     window.location.replace("signin.html")
 }
 

@@ -109,7 +109,7 @@ body {
 }
 
 .container-general{
-    background: url('image/background.jpg');
+    background: url('../image/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 95vh;
