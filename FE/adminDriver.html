@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Viet Holiday</title>
+        <link rel="stylesheet" href="adminDriver.css">
+    </head>
+
+    <header class="header"> 
+        <div class="logo">
+            <img class="header-logo" src="./image/logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar">
+            <a href="admin.html">Home</a>
+            <a href="adminDriver.html">Driver</a>
+            <a href="adminVehicle.html">Vehicle</a>
+            <a href="">User</a>
+        </nav>
+
+        <div class="admin-account-container">
+            <select name="admin-account" id="admin-account">
+                <option value="admin-account" selected disabled>Admin</option>
+                <option value="logOut">Log Out</option>
+            </select>
+        </div>
+    </header>
+    
+    <body>
+        <div class="container-general">
+            <button class="add-button" id="add-button">Add</button>
+            <div class="driver-list">
+            </div>
+        </div>       
+        
+        <script>
+            const driverList = document.querySelector('.driver-list');
+
+            fetch('http://localhost:8080/drivers')
+            .then(response => response.json())
+            .then(drivers => {
+                writeDriver(drivers);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+            function writeDriver(drivers) {
+                drivers.forEach(driver=> {
+                    const driverElement = document.createElement('div');
+                    driverElement.innerHTML = `<span class="attribute-name">Name: </span>${driver.driverName}<br>
+                                                <span class="attribute-name">Phone: </span>${driver.driverPhoneNumber}<br>
+                                                <span class="attribute-name">License: </span>${driver.driverLicenseNumber}<br>
+                                                <span class="attribute-name">Experience: </span>${driver.driverYearOfExperience}<br>`;
+                    driverElement.classList.add('driver');
+
+                    const editButtonElement = document.createElement('button');
+                    editButtonElement.textContent = 'Edit';
+                    editButtonElement.classList.add('edit-button');
+                    editButtonElement.addEventListener('click', () => {
+                        window.location.href = `/editDriver.html?id=${driver.id}`;
+                    });
+                    driverElement.appendChild(editButtonElement);
+
+                    const deleteButtonElement = document.createElement('button');
+                    deleteButtonElement.textContent = 'Delete';
+                    deleteButtonElement.classList.add('delete-button');
+                    deleteButtonElement.addEventListener('click', () => {
+                        window.location.href = `/deleteDriver.html?id=${driver.id}`;
+                    });
+                    driverElement.appendChild(deleteButtonElement);
+
+                    driverList.appendChild(driverElement);
+                });
+            }
+
+            const adminAccountSelect = document.getElementById("admin-account");
+            adminAccountSelect.addEventListener("change", function() {
+                const selectedOption = adminAccountSelect.value;
+                if (selectedOption === "logOut") {
+                    window.location.href = "signin.html";
+                }
+            });
+
+            const addDriverSelect = document.getElementById("add-button");
+            addDriverSelect.addEventListener("click", function() {
+                window.location.href = "addDriver.html";
+            });
+        </script>
+    </body>
+
+    <footer class="footer">
+        <span class="group-id">Group 18</span>  
+    </footer>
+</html>

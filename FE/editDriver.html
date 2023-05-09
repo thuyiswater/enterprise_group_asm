@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Viet Holiday</title>
+        <link rel="stylesheet" href="CRUD.css">
+    </head>
+
+    <header class="header"> 
+        <div class="logo">
+            <img class="header-logo" src="./image/logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar">
+            <a href="admin.html">Home</a>
+            <a href="adminDriver.html">Driver</a>
+            <a href="adminVehicle.html">Vehicle</a>
+            <a href="">User</a>
+        </nav>
+
+        <div class="admin-account-container">
+            <select name="admin-account" id="admin-account">
+                <option value="admin-account" selected disabled>Admin</option>
+                <option value="logOut">Log Out</option>
+            </select>
+        </div>
+    </header>
+    
+    <body>
+        <div class="container-general">
+            <div class="form-container">  
+                <form action="">
+                    <h2>Update Driver</h2>
+
+                    <div class="message-container">
+                        <p class="success-message"></p>
+                        <p class="error-message"></p>
+                    </div>
+                    
+                    <label for="name">Name:</label>
+                    <input  type="text" id="name"required pattern=".{1,}">
+
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" required pattern=".{1,}">
+
+                    <label for="license">License:</label>
+                    <input type="string" id="license" required pattern=".{1,}">
+
+                    <label for="experience">Year Of Experience:</label>
+                    <input  type="number" id="experience" required pattern=".{1,}">
+
+                    <label for="password">Password:</label>
+                    <input  type="string" id="password" required pattern=".{1,}">
+                    
+                    <div class="button-group">
+                        <button type="button" onclick="window.location.href='/adminDriver.html'" class="go-back-button">Go back</button>
+                        <button type="submit" name="create-button" value="create-button"class="create-button">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>       
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const driverId = urlParams.get('id');
+            let form = document.querySelector('form');
+            var avatar;
+
+            fetch('http://localhost:8080/drivers')
+            .then(response => response.json())
+            .then(drivers => {
+                const driver = drivers.find(v => v.id === parseInt(driverId));
+                console.log(driver);
+                document.getElementById('name').value = driver.driverName;
+                document.getElementById('phone').value = driver.driverPhoneNumber;
+                document.getElementById('license').value = driver.driverLicenseNumber;
+                document.getElementById('experience').value = driver.driverYearOfExperience;
+                document.getElementById('password').value = driver.driverPassword;
+                avatar = driver.driverAvatar;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                let name = document.querySelector('#name').value;
+                let phone = document.querySelector('#phone').value;
+                let license = document.querySelector('#license').value;
+                let experience = document.querySelector('#experience').value;
+                let password = document.querySelector('#password').value;
+
+                const updatedDriver = {
+                    id: driverId,
+                    driverName: name,
+                    driverPhoneNumber: phone,
+                    driverLicenseNumber: license,
+                    driverYearOfExperience: experience,
+                    driverPassword: password,
+                    driverAvatar: avatar
+                };
+
+                console.log(updatedDriver);
+
+                fetch(`http://localhost:8080/drivers/${driverId}`, {
+                    method: "PUT",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedDriver)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        document.querySelector('.success-message').textContent = 'Driver updated successfully!';
+                    } else {
+                        document.querySelector('.error-message').textContent = 'Error updating driver. Please try again.';
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    document.querySelector('.error-message').textContent = 'An error occurred. Please try again later.';
+                });
+            });
+        </script>
+    </body>
+
+    <footer class="footer">
+        <span class="group-id">Group 18</span>  
+    </footer>
+</html>
