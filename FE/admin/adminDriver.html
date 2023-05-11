@@ -38,7 +38,7 @@
         <script>
             const driverList = document.querySelector('.driver-list');
 
-            fetch('http://localhost:8080/drivers')
+            fetch('http://localhost:8080/api/v1/drivers')
             .then(response => response.json())
             .then(drivers => {
                 writeDriver(drivers);

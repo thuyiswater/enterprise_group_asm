@@ -10,7 +10,7 @@
 
     <header class="header"> 
         <div class="logo">
-            <img class="header-logo" src="./image/logo.png" alt="Logo">
+            <img class="header-logo" src="../image/logo.png" alt="Logo">
         </div>
 
         <nav class="navbar">
@@ -55,7 +55,7 @@
                     <input  type="text" id="password" value="1" disabled>
                     
                     <div class="button-group">
-                        <button type="button" onclick="window.location.href='/adminDriver.html'" class="go-back-button">Go back</button>
+                        <button type="button" onclick="window.location.href='adminDriver.html'" class="go-back-button">Go back</button>
                         <button type="submit" name="create-button" value="create-button"class="create-button">Create</button>
                     </div>
                 </form>
@@ -72,7 +72,6 @@
                 let password = document.querySelector('#password').value;
 
                 const newDriver = {
-                    id : null,
                     driverName: name, 
                     driverPhoneNumber: phone, 
                     driverLicenseNumber: license, 
@@ -83,8 +82,8 @@
 
                 console.log(newDriver);
         
-                fetch('http://localhost:8080/drivers', {
-                    method: "POST",
+                fetch('http://localhost:8080/api/v1/drivers', {
+                    method: "post",
                     headers: {
                         'Content-Type': 'application/json'
                     },

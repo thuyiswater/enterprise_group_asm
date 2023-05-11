@@ -10,14 +10,16 @@
 
     <header class="header"> 
         <div class="logo">
-            <img class="header-logo" src="./image/logo.png" alt="Logo">
+            <img class="header-logo" src="../image/logo.png" alt="Logo">
         </div>
 
         <nav class="navbar">
-            <a href="admin.html">Home</a>
-            <a href="adminDriver.html">Driver</a>
-            <a href="adminVehicle.html">Vehicle</a>
-            <a href="">User</a>
+            <ul>
+                <li><a href="home.html" class="active-nav">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="vehicle.html"> Vehicles</a></li>
+            </ul>
         </nav>
 
         <div class="admin-account-container">
@@ -37,7 +39,7 @@
         </div>       
         
         <script>
-            fetch('http://localhost:8080/bookings')
+            fetch('http://localhost:8080/api/v1/bookings')
             .then(response => response.json())
             .then(schedules => {
                 writeSchedule(schedules);
