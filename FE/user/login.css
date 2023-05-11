@@ -48,7 +48,7 @@
 }
 
 body{
-    background: url('./image/background.jpg');
+    background: url('../image/background.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     overflow:hidden;
