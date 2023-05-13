@@ -10,7 +10,7 @@
 
     <header class="header"> 
         <div class="logo">
-            <img class="header-logo" src="./image/logo.png" alt="Logo">
+            <img class="header-logo" src="../image/logo.png" alt="Logo">
         </div>
 
         <nav class="navbar">
@@ -36,66 +36,15 @@
             </div>
         </div>       
         
+        <script src="adminScript.js"></script>
         <script>
-           fetch('http://localhost:8080/bookings')
-            .then(response => response.json())
-            .then(schedules => {
-                writeSchedule(schedules);
-                writeDriverInfor(schedules[0].driver);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            const searchParams = new URLSearchParams(window.location.search);
+            const driverId = searchParams.get('driver.id');
 
-            function writeSchedule(schedules) {
-                const table = document.querySelector('table');
-                const tableHeader = document.createElement('tr');
-                tableHeader.innerHTML = `
-                    <th>Booking Date</th>
-                    <th>Pick Up Time</th>
-                    <th>Pick Up Location</th>
-                    <th>Destination</th>
-                    <th>Estimated Time of Arrival</th>
-                    <th>Payment Method</th>
-                    <th></th>
-                `;
-                table.appendChild(tableHeader);
-
-                schedules.forEach(schedule => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${schedule.bookingDate}</td>
-                    <td>${schedule.bookingPickUpTime}</td>
-                    <td>${schedule.bookingPickUpLocation}</td>
-                    <td>${schedule.bookingDropOffLocation}</td>
-                    <td>${schedule.bookingDropOffTime}</td>
-                    <td>${schedule.payment.paymentType}</td>
-                    <td>
-                        <button class="finish-button">Finish</button>
-                        <button class="view-more-button">View More</button>
-                    </td>
-                `;
-                table.appendChild(row);
-                });
-            }
-
-            function writeDriverInfor(driver){
-                const rightPanel = document.querySelector('.right-panel');
-                rightPanel.innerHTML = `<h4>Driver Profile</h4> <br>
-                                        <span class="attribute-name">Name: </span> ${driver.driverName}<br>
-                                        <span class="attribute-name">Phone: </span> ${driver.driverPhoneNumber}<br>
-                                        <span class="attribute-name">License: </span> ${driver.driverLicenseNumber}<br>
-                                        <span class="attribute-name">Experience: </span> ${driver.driverYearOfExperience}<br>`;
-            }
-
+            fetchDriverMode(driverId);
+            
             const driverAccountSelect = document.getElementById("driver-account");
-            driverAccountSelect.addEventListener("change", function() {
-                const selectedOption = driverAccountSelect.value;
-                if (selectedOption === "logOut") {
-                    window.location.href = "signin.html";
-                }
-            });
-
+            driverAccountSelect.addEventListener("change", function() { logOut(driverAccountSelect.value) });
         </script>
     </body>
 
